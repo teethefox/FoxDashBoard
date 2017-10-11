@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    
+    <title>Document</title>
+</head>
+<body><div class="container text-center">
+    <h2 class="jumbotron text-center"> This is all of 'em //<br>// <a href="/new">Create New</a></h2>
+    <% for (var i in foxes) { %>
+        <h3 >Name: <%= foxes[i].name %></h3>
+        <p class="form-control">Age: <%= foxes[i].age %></p>
+        <p class="form-control">Fun Fact: <%= foxes[i].funfact %></p>
+        <p class="form-control">Id: <a href="/foxes/<%=foxes[i].id%>"><%=foxes[i].id%></a></p>
+        <form action="/foxes/destroy/<%=foxes[i].id%>" method="post">
+            <input class="btn btn-primary" type="submit" value="Destroy">
+        </form>
+        <hr>
+      <% } %></div>
+</body>
+</html>
